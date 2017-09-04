@@ -10,15 +10,15 @@ public class Thrid2 {
         int proizv, bufswap;
         double sredarifm;
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter 3 numbers: ");
+        System.out.println("Введите 3 числа: ");
         int inputfirst = in.nextInt();
         int inputsecond = in.nextInt();
         int inputthird = in.nextInt();
         sredarifm=inputfirst+inputsecond+inputthird;
         sredarifm=sredarifm/3.0;
         proizv=inputfirst*inputsecond*inputthird;
-        System.out.println("Srednee arifm: " + sredarifm);
-        System.out.println("Proizvedenie: " + proizv);
+        System.out.println("Среднее арифметическое: " + sredarifm);
+        System.out.println("Произведение: " + proizv);
         if(inputfirst < inputsecond) {
             bufswap=inputfirst;
             inputfirst=inputsecond;

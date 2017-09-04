@@ -6,10 +6,11 @@ package imit.student;
 import java.util.Scanner;
 public class Four {
     public static void main(String[] args) {
-        double discriminant, quan=0;
+        double discriminant;
+        int quan=0;
         double[] answer = new double[2];
         Scanner in=new Scanner(System.in);
-        System.out.println("Enter 3 numbers:");
+        System.out.println("Введите 3 индекса, первый при x^2, второй при x, третий свободный");
         double firstindex=in.nextDouble();
         double secondindex=in.nextDouble();
         double thirdindex=in.nextDouble();
@@ -26,8 +27,8 @@ public class Four {
             answer[0]=(0-secondindex + Math.sqrt(discriminant))/(2*firstindex);
             answer[1]=(0-secondindex - Math.sqrt(discriminant))/(2*firstindex);
         }
-        System.out.println("Chislo kornei: " + quan);
-        System.out.print("Korni: ");
+        System.out.println("Число корней: " + quan);
+        System.out.print("Корни: ");
         for(int i=0; i<quan; i++) {
             System.out.println(+ answer[i]);
         }
