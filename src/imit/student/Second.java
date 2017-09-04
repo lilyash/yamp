@@ -3,6 +3,7 @@ package imit.student;
 /**
  * Created by Student on 04.09.2017.
  */
+import java.awt.*;
 import java.util.Scanner;
 public class Second {
     public static void main(String[] args) {
@@ -24,8 +25,13 @@ public class Second {
             if (inputsecond < inputthird)
             {
                 bufswap=inputthird;
-                inputsecond=inputthird;
                 inputthird=inputsecond;
+                inputsecond=bufswap;
+                if(inputfirst < inputsecond) {
+                    bufswap = inputfirst;
+                    inputfirst = inputsecond;
+                    inputsecond = bufswap;
+                }
             }
         }
         else{
@@ -34,8 +40,13 @@ public class Second {
                 inputfirst=inputthird;
                 inputthird=bufswap;
             }
+            if (inputsecond < inputthird) {
+                bufswap=inputsecond;
+                inputsecond=inputthird;
+                inputthird=bufswap;
+            }
         }
-
+        System.out.println(inputthird + " " + inputsecond + " " + inputfirst);
     }
 
 }
