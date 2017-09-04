@@ -7,12 +7,12 @@ import java.awt.*;
 import java.util.Scanner;
 public class Second {
     public static void main(String[] args) {
-        int sredarifm, proizv, bufswap;
+        double sredarifm, proizv, bufswap;
         Scanner in = new Scanner(System.in);
         System.out.println("Enter 3 numbers: ");
-        int inputfirst = in.nextInt();
-        int inputsecond = in.nextInt();
-        int inputthird = in.nextInt();
+        double inputfirst = in.nextInt();
+        double inputsecond = in.nextInt();
+        double inputthird = in.nextInt();
         sredarifm=inputfirst+inputsecond+inputthird;
         sredarifm=sredarifm/3;
         proizv=inputfirst*inputsecond*inputthird;
