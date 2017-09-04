@@ -3,18 +3,19 @@ package imit.student;
 /**
  * Created by Student on 04.09.2017.
  */
-import java.awt.*;
-import java.util.Scanner;
-public class Second {
+
+        import java.util.Scanner;
+public class Thrid2 {
     public static void main(String[] args) {
-        double sredarifm, proizv, bufswap;
+        int proizv, bufswap;
+        double sredarifm;
         Scanner in = new Scanner(System.in);
         System.out.println("Enter 3 numbers: ");
-        double inputfirst = in.nextDouble();
-        double inputsecond = in.nextDouble();
-        double inputthird = in.nextDouble();
+        int inputfirst = in.nextInt();
+        int inputsecond = in.nextInt();
+        int inputthird = in.nextInt();
         sredarifm=inputfirst+inputsecond+inputthird;
-        sredarifm=sredarifm/3;
+        sredarifm=sredarifm/3.0;
         proizv=inputfirst*inputsecond*inputthird;
         System.out.println("Srednee arifm: " + sredarifm);
         System.out.println("Proizvedenie: " + proizv);
