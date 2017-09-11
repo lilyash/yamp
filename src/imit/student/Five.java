@@ -13,14 +13,19 @@ public class Five {
         double grantop=in.nextDouble();
         double granbot=in.nextDouble();
         double shag=in.nextDouble();
-        System.out.println("-----------------------------");
-        System.out.println("|  x  |        sin(x)       |");
-        System.out.println("-----------------------------");
-        argum=granbot;
-        while(argum <= grantop) {
-            System.out.println("| " + argum + " | " + Math.sin(argum) + " |");
+        if(granbot>grantop){
+            System.out.println("Нижняя граница больше верхней!");
+        }
+        else {
             System.out.println("-----------------------------");
-            argum+=shag;
+            System.out.println("|  x  |        sin(x)       |");
+            System.out.println("-----------------------------");
+            argum = granbot;
+            while (argum <= grantop) {
+                System.out.println("| " + argum + " | " + Math.sin(argum) + "  |");
+                System.out.println("-----------------------------");
+                argum += shag;
+            }
         }
     }
 }

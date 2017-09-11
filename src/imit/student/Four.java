@@ -19,22 +19,27 @@ public class Four {
             System.out.println("Решений бесконечно много!");
         }
         else {
-            if (discriminant == 0) {
-                answer[0] = (0 - secondindex) / (2 * firstindex);
-                quan = 1;
+            if(firstindex==0 && secondindex==0) {
+                System.out.println("Решений не существует!");
             }
-            if (discriminant < 0) {
-                quan = 0;
-            }
-            if (discriminant > 0) {
-                quan = 2;
-                answer[0] = (0 - secondindex + Math.sqrt(discriminant)) / (2 * firstindex);
-                answer[1] = (0 - secondindex - Math.sqrt(discriminant)) / (2 * firstindex);
-            }
-            System.out.println("Число корней: " + quan);
-            System.out.print("Корни: ");
-            for (int i = 0; i < quan; i++) {
-                System.out.println(+answer[i]);
+            else {
+                if (discriminant == 0) {
+                    answer[0] = (0 - secondindex) / (2 * firstindex);
+                    quan = 1;
+                }
+                if (discriminant < 0) {
+                    quan = 0;
+                }
+                if (discriminant > 0) {
+                    quan = 2;
+                    answer[0] = (0 - secondindex + Math.sqrt(discriminant)) / (2 * firstindex);
+                    answer[1] = (0 - secondindex - Math.sqrt(discriminant)) / (2 * firstindex);
+                }
+                System.out.println("Число корней: " + quan);
+                System.out.print("Корни: ");
+                for (int i = 0; i < quan; i++) {
+                    System.out.println(+answer[i]);
+                }
             }
         }
     }
