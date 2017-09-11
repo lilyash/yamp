@@ -3,7 +3,6 @@ package imit.student;
 /**
  * Created by Student on 04.09.2017.
  */
-import java.awt.*;
 import java.util.Scanner;
 public class Second {
     public static void main(String[] args) {

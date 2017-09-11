@@ -4,6 +4,7 @@ package imit.student;
  * Created by Student on 04.09.2017.
  */
 import java.util.Scanner;
+
 public class Five {
     public static void main(String[] args) {
         double argum;
