@@ -15,7 +15,7 @@ public class Six {
         double secondx = in.nextDouble();
         double secondy = in.nextDouble();
         double secondequal = in.nextDouble();
-        if((firstx==0 && secondx==0 && firstequal==0) || (firsty==0 && secondy==0 && secondequal==0)) {
+        if((firstx==0 && firsty==0 && firstequal==0) || (secondx==0 && secondy==0 && secondequal==0)) {
             System.out.println("Решений бесконечно много");
         }
         else {
