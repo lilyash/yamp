@@ -15,11 +15,12 @@ public class Seven {
         if (accuracy <= 0) {
             System.out.println("Точность должна быть больше нуля!");
         } else {
+            series += term;
             do {
-                series += term;
                 count++;
                 term *= point;
                 term /= count;
+                series += term;
             } while (Math.abs(term) > accuracy);
             System.out.println("Значение exp(x)в точке: " + point + " равно " + series);
         }

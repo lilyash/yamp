@@ -6,7 +6,7 @@ public class Eight {
 
     public static void main(String[] args) {
         int sum=0, evenCount=0, borderCount=0;
-        boolean positive=true;
+        boolean positive=true, border=true;
         Scanner in = new Scanner(System.in);
         int size = 10, count, changeOrderCount=(size-1);
         int[] arr = new int[size];
@@ -17,8 +17,11 @@ public class Eight {
             arr[count]=elem;
         }
         System.out.println("Введите границы отрезка на котором будут искаться числа");
-        int leftBorder = in.nextInt();
-        int rightBorder=in.nextInt();
+        double leftBorder = in.nextDouble();
+        double rightBorder=in.nextDouble();
+        if(leftBorder>rightBorder){
+            border=false;
+        }
         System.out.println("Массив");
         for (count = 0; count < size; count++) {
             System.out.print(arr[count] + " ");
@@ -42,7 +45,11 @@ public class Eight {
         }
         System.out.println("\nСумма элементов = " + sum);
         System.out.println("В массиве " + evenCount + " чётных чисел");
-        System.out.println("К отрезку [" + leftBorder + "," + rightBorder + "] принадлежит " + borderCount + " чисел");
+        if(border) {
+            System.out.println("К отрезку [" + leftBorder + "," + rightBorder + "] принадлежит " + borderCount + " чисел");
+        } else{
+            System.out.println("Левая граница отрезка больше правой");
+        }
         if(positive){
             System.out.println("Все элементы массива положительные");
         }

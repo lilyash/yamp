@@ -15,37 +15,36 @@ public class Five {
         double shag = in.nextDouble();
         if (granbot > grantop && shag > 0) {
             System.out.println("Нижняя граница больше верхней и шаг положительный!");
-        } else {
-            if (shag == 0) {
-                System.out.println("Шаг нулевой!");
-            } else {
-                if (shag < 0 && granbot < grantop) {
-                    System.out.println("Нижняя граница меньше верхней и шаг отрицательный!");
-                } else {
-                    if(shag>0) {
-                        System.out.println("-----------------------------");
-                        System.out.println("|  x  |        sin(x)       |");
-                        System.out.println("-----------------------------");
-                        argum = granbot;
-                        do {
-                            System.out.println("| " + argum + " | " + Math.sin(argum) + "  |");
-                            System.out.println("-----------------------------");
-                            argum += shag;
-                        } while (argum <= grantop);
-                    }
-                    if(shag<0) {
-                        System.out.println("-----------------------------");
-                        System.out.println("|  x  |        sin(x)       |");
-                        System.out.println("-----------------------------");
-                        argum = granbot;
-                        do {
-                            System.out.println("| " + argum + " | " + Math.sin(argum) + "  |");
-                            System.out.println("-----------------------------");
-                            argum += shag;
-                        } while (argum >= grantop);
-                    }
-                }
-            }
+            return;
+        }
+        if (shag == 0) {
+            System.out.println("Шаг нулевой!");
+            return;
+        }
+        if (shag < 0 && granbot < grantop) {
+            System.out.println("Нижняя граница меньше верхней и шаг отрицательный!");
+            return;
+        }
+
+        System.out.println("-----------------------------");
+        System.out.println("|  x  |        sin(x)       |");
+        System.out.println("-----------------------------");
+
+        if(shag>0) {
+            argum = granbot;
+            do {
+                System.out.println("| " + argum + " | " + Math.sin(argum) + "  |");
+                System.out.println("-----------------------------");
+                argum += shag;
+            } while (argum <= grantop);
+        }
+        if(shag<0) {
+            argum = granbot;
+            do {
+                System.out.println("| " + argum + " | " + Math.sin(argum) + "  |");
+                System.out.println("-----------------------------");
+                argum += shag;
+            } while (argum >= grantop);
         }
     }
 }

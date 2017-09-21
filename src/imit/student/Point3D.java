@@ -1,15 +1,15 @@
 package imit.student;
 
- class Point3DWork {
+ public class Point3D {
     private double x;
     private double y;
     private double z;
-    public Point3DWork(double x, double y, double z) {
+    public Point3D(double x, double y, double z) {
         this.x=x;
         this.y=y;
         this.z=z;
     }
-    public Point3DWork() {
+    public Point3D() {
         x=0;
         y=0;
         z=0;
@@ -34,7 +34,7 @@ package imit.student;
     }
 }
 
-public class Point3D {
+/*public class Point3D {
     public static void main (String[] args){
         Point3DWork firstPoint = new Point3DWork();
         Point3DWork secondPoint = new Point3DWork(1.0, 2.5, -4.1);
@@ -49,4 +49,4 @@ public class Point3D {
             System.out.println("Точка равна сама себе");
         }
     }
-}
+}*/
