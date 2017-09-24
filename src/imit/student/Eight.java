@@ -56,5 +56,9 @@ public class Eight {
         else{
             System.out.println("В массиве есть отрицательные элементы");
         }
+        Vector3DArray abc = new Vector3DArray(10);
+        for(int io=0; io<10; io++){
+
+        }
     }
 }

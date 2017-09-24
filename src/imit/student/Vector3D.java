@@ -15,35 +15,35 @@ public class Vector3D {
         this.z=z;
     }
     public Vector3D(Point3D startPoint, Point3D endPoint){
-        x=endPoint.GetX()-startPoint.GetX();
-        y=endPoint.GetY()-startPoint.GetY();
-        z=endPoint.GetZ()-startPoint.GetZ();
+        x=endPoint.getX()-startPoint.getX();
+        y=endPoint.getY()-startPoint.getY();
+        z=endPoint.getZ()-startPoint.getZ();
     }
-    public double LengthVector(){
+    public double getLengthVector(){
         return (Math.sqrt(x*x+y*y+z*z));
     }
-    public boolean CompareVector(Vector3D comparingVector){
-        if(x==comparingVector.GetX() && y==comparingVector.GetY() && z==comparingVector.GetZ()){
+    public boolean compareVector(Vector3D comparingVector){
+        if(x==comparingVector.getX() && y==comparingVector.getY() && z==comparingVector.getZ()){
             return true;
         }
             return false;
     }
-    public double GetX(){
+    public double getX(){
         return x;
     }
-    public double GetY(){
+    public double getY(){
         return y;
     }
-    public double GetZ(){
+    public double getZ(){
         return z;
     }
-    public void SetX(double x){
+    public void setX(double x){
         this.x=x;
     }
-    public void SetY(double y){
+    public void setY(double y){
         this.y=y;
     }
-    public void SetZ(double z){
+    public void setZ(double z){
         this.z=z;
     }
 }
