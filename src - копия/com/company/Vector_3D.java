@@ -44,6 +44,9 @@ public class Vector_3D {
         this.y=end.getY()- start.getY();
     }
 
+    public double getVectorLength(){
+        return Math.sqrt(this.x*this.x+this.y*this.y+this.z*this.z);
+    }
 
     @Override
     public boolean equals(Object o) {
