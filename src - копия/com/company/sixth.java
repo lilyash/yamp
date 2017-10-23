@@ -14,7 +14,6 @@ public class sixth {
         float b2 = in.nextFloat();
         float c2 = in.nextFloat();
         if ((a2 == 0) && (b2 == 0) && (a1 == 0) && (b1 == 0)) {
-// System.out.println("Системы уравнений:");
             System.out.println(a1 + "x + " + b1 + "y=" + c1);
             System.out.println(a2 + "x + " + b2 + "y=" + c2);
         } else {
@@ -54,7 +53,7 @@ public class sixth {
                                                 System.out.println("y = " + y);
                                             }
                                         }
-                                    }//
+                                    }
                                 }
                             }
                         }
