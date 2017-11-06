@@ -19,7 +19,7 @@ public class fourth {
         {
             if( a == 0 && b == 0 && c == 0)
             {
-                System.out.println("Х - любое число, т.к 0*х^2 +/- 0*x = 0");
+                System.out.println("Х - любое число");
             }
             else {
                 x = (-c)/ b;
@@ -27,21 +27,25 @@ public class fourth {
             }
         }
         else {
-
-            d = ((b * b) - (4 * a * c));
-            if (d < 0) {
-                System.out.println("Дискриминант меньше 0, уравнение не имеет корней");
-                return;
+            if (b==0 && c==0){
+                System.out.println("x = 0");
             }
+            else {
+                d = ((b * b) - (4 * a * c));
+                if (d < 0) {
+                    System.out.println("Дискриминант меньше 0, уравнение не имеет корней");
+                    return;
+                }
 
-            if (d == 0) {
-                x = ((2 * a) / b);
-                System.out.println("Уравнение имеет один корень" + x);
-            }
-            if (d > 0) {
-                x1 = (((-b) - Math.sqrt(d)) / 2 * a);
-                x2 = (((-b) + Math.sqrt(d)) / 2 * a);
-                System.out.println("Уравнение имеет два корня " + x1 + "\t" + x2);
+                if (d == 0) {
+                    x = (-b /(2 * a));
+                    System.out.println("Уравнение имеет один корень" + x);
+                }
+                if (d > 0) {
+                    x1 = (((-b) - Math.sqrt(d)) / (2 * a));
+                    x2 = (((-b) + Math.sqrt(d)) / (2 * a));
+                    System.out.println("Уравнение имеет два корня " + x1 + "\t" + x2);
+                }
             }
         }
     }

@@ -42,6 +42,7 @@ public class Vector_3D {
     public Vector_3D(Point_3D start, Point_3D end){
         this.x=end.getX()- start.getX();
         this.y=end.getY()- start.getY();
+        this.z=end.getZ()-start.getZ();
     }
 
     public double getVectorLength(){

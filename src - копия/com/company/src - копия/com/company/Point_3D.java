@@ -35,7 +35,7 @@ public class Point_3D {
     }
 
     public void setZ(double z) {
-        this.y=y;
+        this.z=z;
     }
 
     @Override
