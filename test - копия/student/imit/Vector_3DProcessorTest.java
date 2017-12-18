@@ -46,7 +46,7 @@ public void testVector(){
 public void testcheck(){
     Vector_3D test = new Vector_3D(0,4,0);
     Vector_3D test1 = new Vector_3D(9,0,6);
-    boolean testres = Vector_3DProcessor.checkCollinearity(test,test1);
+    boolean testres = Vector_3DProcessor.checkCollinear(test,test1);
 }
 
 }
