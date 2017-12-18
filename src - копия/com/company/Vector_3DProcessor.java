@@ -25,14 +25,10 @@ public class Vector_3DProcessor {
         double z=first.getX()* second.getY() - first.getY()*second.getX();
         return new Vector_3D(x,y,z);
     }
-    public static boolean checkCollinearity(Vector_3D first, Vector_3D second) {
+    public static boolean checkCollinear(Vector_3D first, Vector_3D second) {
         double x=first.getY()* second.getZ()-first.getZ()*second.getY();
         double y=first.getX()* second.getZ() - first.getZ()*second.getX();
         double z=first.getX()* second.getY() - first.getY()*second.getX();
-        if(x==0&&y==0&&z==0)
-        {
-            return true;
-        }
-        return false;
+        return x == 0 && y == 0 && z == 0;
     }
 }

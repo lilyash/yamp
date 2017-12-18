@@ -3,62 +3,141 @@ package com.company;
 import java.util.Scanner;
 public class sixth {
     public static void main(String[] args) {
-
-        System.out.println("Введите коэффициенты первого уравнения и свободный член:");
-        Scanner in = new Scanner(System.in);
-        float a1 = in.nextFloat();
-        float b1 = in.nextFloat();
-        float c1 = in.nextFloat();
-        System.out.println("Введите коэффициенты второго уравнения и свободный член:");
-        float a2 = in.nextFloat();
-        float b2 = in.nextFloat();
-        float c2 = in.nextFloat();
-        if ((a2 == 0) && (b2 == 0) && (a1 == 0) && (b1 == 0)) {
-            System.out.println(a1 + "x + " + b1 + "y=" + c1);
-            System.out.println(a2 + "x + " + b2 + "y=" + c2);
-        } else {
-            if ((a1 != 0) && (b1 != 0) && (a2 == 0) && (b2 == 0)) {
-                System.out.println("x = (" + c1 + " - " + b1 + "y)/" + a1);
-            } else {
-                if ((a1 != 0) && (b1 == 0) && (a2 == 0) && (b2 == 0)) {
-                    System.out.println("x = " + c1 / a1);
-                } else {
-                    if ((a1 == 0) && (b1 != 0) && (a2 == 0) && (b2 == 0)) {
-                        System.out.println("y = " + c1 / b1);
+        SLE(0,0,0,0,0,0);
+        System.out.println();
+        SLE(0,0,0,0,0,1);
+        SLE(0,0,1,0,0,0);
+        SLE(0,0,1,0,0,1);
+        SLE(1,0,16,1,0,4);
+        SLE(0,1,10,0,1,5);
+        SLE(1,1,2,2,2,3);
+        System.out.println();
+        SLE(0,0,0,1,2,3);
+        SLE(1,1,1,2,2,2);
+        SLE(1,0,0,0,0,0);
+        SLE(0,0,0,0,1,1);
+        SLE(1,2,0,0,0,0);
+        System.out.println();
+        SLE(1,2,3,4,5,6);
+    }
+    public static void SLE(double firstx, double firsty, double firstequal, double secondx, double secondy,
+                           double secondequal) {
+        double x, y;
+      /* Scanner in = new Scanner(System.in);
+        System.out.println("Введите коэффициенты для первого уравнения");
+        double firstx = in.nextDouble();
+        double firsty = in.nextDouble();
+        double firstequal = in.nextDouble();
+        System.out.println("Введите коэффициенты для второго уравнения");
+        double secondx = in.nextDouble();
+        double secondy = in.nextDouble();
+        double secondequal = in.nextDouble();;*/
+        if((firstx==0 && firsty==0 && firstequal==0) || (secondx==0 && secondy==0 && secondequal==0)){
+            if(firstx!=0 && firsty!=0){
+                System.out.println("Решений бесконечно много!");
+                return;
+            }
+            if(secondx!=0 && secondy!=0){
+                System.out.println("Решений бесконечно много!");
+                return;
+            }
+        }
+        if(firstx==0 && secondx==0 && firsty==0 && secondy==0 && firstequal==0 && secondequal==0){
+            System.out.println("Решений бесконечно много!");
+            return;
+        }
+        if((firstx==0 && firsty==0 && firstequal!=0) || (secondx==0 && secondy==0 && secondequal!=0)) {
+            System.out.println("Решений нет!");
+        }
+        else {
+            while (firstx != 0 && secondx != 0) {
+                if (Math.abs(firstx) >= Math.abs(secondx)) {
+                    if ((secondx >= 0) && (firstx > 0)) {
+                        firstx -= secondx;
+                        firsty -= secondy;
+                        firstequal -= secondequal;
                     } else {
-                        if ((a2 != 0) && (b2 != 0) && (a1 == 0) && (b1 == 0)) {
-                            System.out.println("x = (" + c2 + " - " + b2 + "y)/" + a2);
-                        } else {
-                            if ((a2 != 0) && (b2 == 0) && (a1 == 0) && (b1 == 0)) {
-                                System.out.println("x = " + c2 / a2);
+                        firstx += secondx;
+                        firsty += secondy;
+                        firstequal += secondequal;
+                    }
+                } else {
+                    if ((firstx >= 0) && (secondx >= 0)) {
+                        secondx -= firstx;
+                        secondy -= firsty;
+                        secondequal -= firstequal;
+                    } else {
+                        secondx += firstx;
+                        secondy += firsty;
+                        secondequal += firstequal;
+                    }
+                }
+            }
+            if ((firstx == 0 && firsty == 0 && firstequal != 0) || (secondx == 0 && secondy == 0 && secondequal != 0)) {
+                System.out.println("Решений нет!");
+            }
+            else {
+                if (firstx == 0) {
+                    if(firsty == 0) {
+                        if(firstequal!=0){
+                            System.out.println("Решений нет!");
+                        }
+                        else{
+                            if(secondx==0) {
+                                System.out.println("X - любое");
+                                y = secondequal / secondy;
+                                System.out.println("Y := " + y);
                             } else {
-                                if ((a2 == 0) && (b2 != 0) && (a1 == 0) && (b1 == 0)) {
-                                    System.out.println("y = " + c2 / b2);
-                                } else {
-                                    if ((a1 / a2 == b1 / b2) && (b1 / b2 == c1 / c2)) {
-                                        System.out.println("система имеет множество решений");
-                                    } else {
-                                        if ((a1 / a2 == b1 / b2) && (a1 / a2 != c1 / c2)) {
-                                            System.out.println("Система не имеет решений");
-                                        } else {
-                                            if ((a1 == 0) && (b1 != 0) && (a2 != 0) && (b2 == 0)) {
-                                                System.out.println("x = " + c1 / b1);
-                                                System.out.println("y = " + c2 / a2);
-                                            } else {
-                                                System.out.println(a1 + "x + " + b1 + "y = " + c1);
-                                                System.out.println(a2 + "x + " + b2 + "y = " + c2);
-                                                float y = (c2 + (-c1 * a2) / a1) / ((-b1 * a2) / a1 + b2);
-                                                float x = (-b1 * y + c1) / a1;
-                                                System.out.println("x = " + x);
-                                                System.out.println("y = " + y);
-                                            }
-                                        }
-                                    }
+                                if(secondy==0) {
+                                    x = secondequal / secondx;
+                                    System.out.println("X := " + x);
+                                    System.out.println("Y - любое");
+                                }
+                                else{
+                                    System.out.println("Решений бесконечно много!");
                                 }
                             }
+
+                        }
+                    }
+                    else {
+                        y = firstequal / firsty;
+                        x = (secondequal - secondy * y) / secondx;
+                        if((y*secondy+x*secondx)!=secondequal){
+                            System.out.println("Решений нет!");
+                        }else {
+                            if (firstx == 0 && secondx == 0) {
+                                System.out.println("X - любое");
+                            } else {
+                                x = (secondequal - secondy * y) / secondx;
+                                System.out.println("X := " + x);
+                            }
+                            if(-y==0){
+                                y=0;
+                            }
+                            System.out.println("Y := " + y);
                         }
                     }
                 }
+                else {
+                    if(secondy == 0) {
+                        if(secondequal!=0){
+                            System.out.println("Решений нет!");
+                        }
+                        else{
+                            x=firstequal/firstx;
+                            System.out.println("X := "+x);
+                            System.out.println("Y - любое");
+                        }
+                    }
+                    else {
+                        y = secondequal / secondy;
+                        x = (firstequal - firsty * y) / firstx;
+                        System.out.println("X := " + x);
+                        System.out.println("Y := " + y);
+                    }
+                }
+
             }
         }
     }

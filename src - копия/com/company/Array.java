@@ -14,18 +14,16 @@ public class Array {
 
     private static int sum(int array[]){
         int sum=0;
-        for (int i = 0; i < array.length; i++)
-        {
-            sum += array[i];
-
+        for (int anArray : array) {
+            sum += anArray;
         }
         return sum;
     }
 
     private static int even(int array[]){
         int counter=0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
+        for (int anArray : array) {
+            if (anArray % 2 == 0) {
                 counter++;
             }
         }
@@ -34,27 +32,23 @@ public class Array {
 
     private static int borders(int array[], double a, double b){
         int counter2=0;
-        Scanner scan = new Scanner(System.in);
-
-        for(int i = 0; i < array.length; i++)
-        {
-            if(array[i]>=a && array[i]<=b)
-            {
+        for (int anArray : array) {
+            if (anArray >= a && anArray <= b) {
                 counter2++;
             }
         }
        return counter2;
     }
+
     private static boolean positive(int array[]){
-        for(int i = 0; i < array.length; i++)
-        {
-            if(array[i]<=0)
-            {
+        for (int anArray : array) {
+            if (anArray <= 0) {
                 return false;
             }
         }
         return true;
     }
+
     private static int[] back(int array[]){
         int [] array2 = new int[array.length];
         for (int i = array.length -1; i >= 0; i--)
@@ -64,45 +58,30 @@ public class Array {
         return array2;
     }
     private static void show(int array[]){
-        for(int i = 0; i < array.length; i++)
-        {
-            System.out.print(" " + array[i]);
+        for (int anArray : array) {
+            System.out.print(" " + anArray);
         }
     }
 
         public static void main(String[] args)
         {
             Scanner scan = new Scanner(System.in);
-            int[] array = new int[10];
-            int sum;
-            int counter;
-            int counter2;
-            boolean flag = false;
-            double a, b;
+            int[] array = new int[5];
+             double a, b;
             System.out.println("Заполните массив с клавиатуры");
             array=fill(array);
-            sum=sum(array);
-            System.out.println("Сумма элементов = " + sum);
-            counter = even(array);
-            System.out.println("Количество четных чисел = " + counter);
+            System.out.println("Сумма элементов = " + sum(array));
+            System.out.println("Количество четных чисел = " + even(array));
             System.out.println("Введите границы отрезка");
             a = scan.nextDouble();
             b = scan.nextDouble();
-            counter2 = borders(array, a,b);
-            System.out.println("Количество элементов в отрезке [ " + a + " , " + b + " ]" + " = " + counter2);
-            flag=positive(array);
-            if(flag)
-            {
-                System.out.println("В массиве все числа положительны");
-            }
-            else
-            {
-                System.out.println("В массиве не все числа положительны");
-            }
+            System.out.println("Количество элементов в отрезке [" + a + ", " + b + "]" + " = " + borders(array, a,b));
+            System.out.println("В массиве все числа положительны?: " + positive(array));
             int [] array2 = back(array);
             show(array);
             System.out.println("");
             show(array2);
+            scan.close();
         }
 
 }

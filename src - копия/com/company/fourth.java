@@ -38,12 +38,12 @@ public class fourth {
                 }
 
                 if (d == 0) {
-                    x = ((2 * a) / b);
+                    x = (-b /(2 * a));
                     System.out.println("Уравнение имеет один корень" + x);
                 }
                 if (d > 0) {
-                    x1 = (((-b) - Math.sqrt(d)) / 2 * a);
-                    x2 = (((-b) + Math.sqrt(d)) / 2 * a);
+                    x1 = (((-b) - Math.sqrt(d)) / (2 * a));
+                    x2 = (((-b) + Math.sqrt(d)) / (2 * a));
                     System.out.println("Уравнение имеет два корня " + x1 + "\t" + x2);
                 }
             }
