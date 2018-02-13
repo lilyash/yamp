@@ -16,8 +16,12 @@ public class FinanceReport {
 
     public FinanceReport(FinanceReport copyFinanceReport){
         this.arraysOfPayments=new Payment[copyFinanceReport.arraysOfPayments.length];
-        for(int i=0; i<copyFinanceReport.getNumberOfPayments(); i++){
-            this.arraysOfPayments[i]=new Payment(copyFinanceReport.arraysOfPayments[i]);
+        for(int i=0, j=0; i<copyFinanceReport.getNumberOfPayments(); j++){
+            if (copyFinanceReport.getIPayments(j) != null) {
+                this.arraysOfPayments[j]=new Payment(copyFinanceReport.arraysOfPayments[j]);
+                i++;
+            }
+
         }
     }
 
@@ -71,6 +75,10 @@ public class FinanceReport {
 
     public Payment getIPayments(int numberOfPayment){
         return arraysOfPayments[numberOfPayment];
+    }
+
+    public void setIPayments(int numberOfPayment, Payment payment){
+        this.arraysOfPayments[numberOfPayment] = new Payment(payment);
     }
 
     public void getAllLastnamePayments(char startOfLastname, String fileName)throws IOException{

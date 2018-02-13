@@ -12,7 +12,7 @@ public class Payment {
     private String name;
     private int day, month, year;
     private int amount;
-    private final int[] monthFull={1, 3, 5, 7, 8, 10, 12};
+    private final static int[] monthFull={1, 3, 5, 7, 8, 10, 12};
 
     private boolean checkData(int day, int month, int year, int amount){
         boolean fullMonth=false;

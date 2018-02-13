@@ -3,11 +3,19 @@ package com.company.task2;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class StringProcessor {
+
+    /**
+     * На входе строка, число повторов, исключение
+     * если число<0 => выбрасывает исключение
+     * если число =0 => пустая строка
+     * если число >0 => выдает количество копий = числу
+     * @param copyString
+     * @param numberOfString
+     * @return
+     * @throws BadStringCountException
+     */
     public static String makeStringFromNString(String copyString, int numberOfString)throws BadStringCountException{
-        /*На входе строка, число повторов, исключение
-        * если число<0 => выбрасывает исключение
-        * если число =0 => пустая строка
-        * если число >0 => выдает количество копий = числу*/
+
         if(numberOfString<0){
             throw new BadStringCountException(); // исключение
         }
@@ -163,6 +171,7 @@ public class StringProcessor {
                 if (elem == 70) {
                     res = 16 * res + 15;
                 }
+//                Integer.parseInt("0x1234", 16);
             }
             workingHex=workingString.substring(pointStartHex, pointStartHex+10);
             decimalString=Integer.toString(res);
